@@ -138,6 +138,31 @@ Represents transactions for bookings.
   - User ↔ Review → One guest can leave many reviews.
   - Booking ↔ Payment → Each booking has one payment.
 
+## Feature Breakdown
+The backend for this Airbnb Clone project will include the following core features:
+
+### **1. User Management**
+Handles account creation, authentication, and role-based access (guest or host).  
+This feature ensures secure login and profile management, while enabling hosts to manage listings and guests to make bookings.  
+
+### **2. Property Management**
+Allows hosts to create, update, and delete rental listings with details such as title, location, price, and availability.  
+This feature forms the backbone of the platform by providing the inventory of properties for guests to explore.  
+
+### **3. Booking System**
+Enables guests to book properties, check availability, and manage reservations.  
+This feature enforces business rules such as preventing double bookings and handling booking status (pending, confirmed, cancelled).  
+
+### **4. Reviews**
+Lets guests leave ratings and comments about their stay on a property.  
+This feature adds trust and transparency to the platform by allowing feedback that helps future guests make informed decisions.  
+
+### **5. Payments**
+Processes transactions related to bookings, including payment status (pending, completed, refunded).  
+This feature ensures that financial operations are securely tied to bookings, simulating how real-world rental marketplaces handle transactions.  
+
+
+
 
 
 
