@@ -191,6 +191,22 @@ This ensures that transaction data is protected and reduces the risk of fraud.
 - **Securing payments:** Financial transactions are highly sensitive and must be encrypted.  
 - **Preserving trust:** A secure backend ensures users can confidently interact with the platform.  
 
+## CI/CD Pipeline
+### What is CI/CD?
+Continuous Integration (CI) and Continuous Deployment (CD) are practices that automate the process of building, testing, and deploying code. Continuous Integration (CI) ensures that every new code change is automatically tested and integrated into the main branch, while Continuous Development (CD) automates deployment so that the application is always up to date.  
+
+### Why is it important?
+- **Faster development cycles**: Automates repetitive tasks so developers can focus on features.  
+- **Higher quality**: Automated testing catches bugs early before they reach production.  
+- **Consistency**: Ensures the same process is followed for every deployment.  
+- **Reliability**: Reduces human error in builds, tests, and releases.  
+
+### Tools to be Used
+- **GitHub Actions**: For automating builds, tests, and deployment workflows directly in the repository.  
+- **Docker**: For containerizing the application to ensure consistency across environments.  
+- **(Optional) Kubernetes**: For orchestrating and scaling containerized deployments.  
+- **(Optional) AWS/GCP/Azure**: For hosting the backend and managing cloud infrastructure.  
+
 
 
 
