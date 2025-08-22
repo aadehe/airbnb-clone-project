@@ -63,6 +63,83 @@ Coordinates tasks, sets timelines, and ensures alignment with goals.
   - Defines milestones (e.g., Phase 1: Auth → Phase 2: Listings → Phase 3: Bookings).
   - Tracks progress in GitHub Issues/Projects.
   - Keeps focus on the learning objectives.
+ 
+## Database Design
+Key Entities and Relationships<br>
+1. **Users**<br>
+Represents both guests and hosts.<br>
++ **Fields**:
+  - id (unique identifier)
+  - name (full name)
+  - email (unique, required for login)
+  - role (guest or host)
+  - created_at (account creation date)<br>
++ **Relationships**:
+  - A user (host) can create multiple properties.
+  - A user (guest) can make multiple bookings.
+  - A user can leave multiple reviews.
+ 
+2. **Properties**<br>
+Represents a rental listing created by a host.
++ **Fields**:
+  - id (unique identifier)
+  - title (short description of property)
+  - location (city, country, address)
+  - price_per_night (numeric value)
+  - host_id (reference to the User who owns it)
++ **Relationships**:
+  - A property belongs to one host (User).
+  - A property can have many bookings.
+  - A property can have many reviews.
+ 
+3. **Bookings**<br>
+Represents a reservation made by a guest.
++ **Fields**:
+  - id (unique identifier)
+  - property_id (reference to the Property)
+  - guest_id (reference to the User)
+  - start_date (check-in date)
+  - end_date (check-out date)
+  - status (pending, confirmed, cancelled)
++ **Relationships**:
+  - A booking belongs to one property.
+  - A booking belongs to one guest (User).
+  - A booking may have one associated payment.
+
+4. **Reviews**<br>
+Represents feedback left by a guest after completing a booking.
++ **Fields**:
+  - id (unique identifier)
+  - property_id (reference to the Property)
+  - guest_id (reference to the User who wrote it)
+  - rating (1–5 stars)
+  - comment (text feedback)
++ **Relationships**:
+  - A review belongs to one property.
+  - A review belongs to one guest (User).
+
+5. **Payments**<br>
+Represents transactions for bookings.
++ **Fields**:
+  - id (unique identifier)
+  - booking_id (reference to the Booking)
+  - amount (total amount charged)
+  - status (pending, completed, refunded)
+  - payment_method (card, PayPal, etc.)
++ **Relationships**:
+  - A payment belongs to one booking.
+  - A booking can have one payment.
+
+6. **Summary of Relationships**
+  - User ↔ Property → One host can have many properties.
+  - User ↔ Booking → One guest can have many bookings.
+  - Property ↔ Booking → One property can have many bookings.
+  - Property ↔ Review → One property can have many reviews.
+  - User ↔ Review → One guest can leave many reviews.
+  - Booking ↔ Payment → Each booking has one payment.
+
+
+
 
 
 
