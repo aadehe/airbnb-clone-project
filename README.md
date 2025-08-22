@@ -161,6 +161,36 @@ This feature adds trust and transparency to the platform by allowing feedback th
 Processes transactions related to bookings, including payment status (pending, completed, refunded).  
 This feature ensures that financial operations are securely tied to bookings, simulating how real-world rental marketplaces handle transactions.  
 
+## API Security
+Security is a critical part of this project to ensure that user data, bookings, and payments remain safe.  
+The following measures will be implemented:
+
+### **1. Authentication**
+All users must log in using secure credentials (e.g., JWT-based authentication).  
+This prevents unauthorized access and ensures that only verified users can interact with protected endpoints.  
+
+### **2. Authorization**
+Role-based access control (RBAC) will be enforced (e.g., host vs. guest).  
+This ensures that users can only perform actions they are allowed to, such as hosts managing properties while guests manage bookings.  
+
+### **3. Data Validation & Sanitization**
+All inputs will be validated and sanitized before processing.  
+This prevents malicious inputs such as SQL injection, cross-site scripting (XSS), or invalid data from compromising the system.  
+
+### **4. Rate Limiting**
+API requests will be throttled to prevent abuse (e.g., brute-force login attempts or denial-of-service attacks).  
+This helps maintain service stability and prevents malicious actors from overwhelming the system.  
+
+### **5. Secure Payments**
+Sensitive financial operations will be handled securely, with proper encryption and integration with trusted payment gateways.  
+This ensures that transaction data is protected and reduces the risk of fraud.  
+
+---------------------------------------------------------------------------------------------------------
+**Why Security Matters**  
+- **Protecting user data:** Usernames, emails, and booking details must remain private.  
+- **Securing payments:** Financial transactions are highly sensitive and must be encrypted.  
+- **Preserving trust:** A secure backend ensures users can confidently interact with the platform.  
+
 
 
 
